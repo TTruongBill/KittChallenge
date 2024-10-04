@@ -102,7 +102,7 @@ export function Combobox({label}: ComboboxProps) {
           aria-expanded={open}
           className="min-w-[270px] h-[60px] justify-between"
         >
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-row gap-2 font-normal text-gray">
             {value 
               ? null
               : <Icons icon="TargetIcon" />

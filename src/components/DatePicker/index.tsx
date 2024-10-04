@@ -23,12 +23,12 @@ export function DatePicker({label}: DatePickerProps) {
         <Button
           variant={"outline"}
           className={cn(
-            "w-[180px] h-[60px] justify-start text-left items-center font-normal ml-3",
+            "w-[180px] h-[60px] justify-start text-left items-center font-normal ml-4",
             !date && "text-muted-foreground"
           )}
         >
           <Icons icon="CalendarIcon" className="mr-2" />
-          {date ? format(date, "PPP") : <span>{label}</span>}
+          {date ? format(date, "PPP") : <span className="font-normal text-gray">{label}</span>}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[270px] p-0">
