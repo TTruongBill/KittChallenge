@@ -13,6 +13,7 @@ import { Combobox } from "@/components/Combobox";
 import { Icons } from "@/components/icons";
 import { useState } from "react";
 import { DatePicker } from "@/components/DatePicker";
+import Link from "next/link";
 
 export default function Home() {
   const [goingTo, setGoingTo] = useState(true)
@@ -34,9 +35,11 @@ export default function Home() {
           <DatePicker label="Return" />
         </CardContent>
         <CardFooter className="justify-end">
-          <Button variant="outline" className="bg-primary text-white w-[249px] h-[48px]">
-            <Icons icon="SearchIcon" className="mr-4"/>  
-            Search flights
+          <Button asChild variant="outline" className="bg-primary text-white w-[249px] h-[48px]">
+            <Link href="/results">
+              <Icons icon="SearchIcon" className="mr-4"/>  
+              Search flights
+            </Link>
           </Button>
         </CardFooter>
       </Card>

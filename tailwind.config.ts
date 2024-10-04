@@ -16,8 +16,9 @@ const config: Config = {
 			secondary: '#001F1D',
 			gray: '#484A4D',
 			'gray-bg': '#F5F7FA',
-			text: '#000C0B',
-			'gray-secondary': '#787B80'
+			'gray-secondary': '#787B80',
+			'gray-from': '#F0F0F0',
+			text: '#000C0B'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
