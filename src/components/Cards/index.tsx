@@ -1,12 +1,12 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
+import { FlightInfoProps } from "./types";
 
 export function Cards() {
-
     return(
         <Card className="flex flex-row w-[1056px] justify-between">
-            <CardContent className="flex flex-col w-full pt-6">
+            <CardContent className="flex flex-col w-full pt-6 gap-10">
                 <FlightInfo 
                     name="New Delhi • AT 4334" 
                     time="9:45 AM - 11:45 AM"
@@ -25,9 +25,9 @@ export function Cards() {
             </CardContent>
             <Separator orientation="vertical" />
             <CardFooter className="flex flex-col items-start justify-end">
-                <p>from</p>
-                <h2 className="font-bold">AED 2,456.90</h2>
-                <Button variant="outline" className="bg-primary text-white w-[182px] h-[40px]">
+                <p className="text-gray-secondary text-sm">from</p>
+                <h2 className="font-medium text-secondary text-xl">AED 2,456.90</h2>
+                <Button variant="outline" className="bg-primary text-white text-base font-normal w-[182px] h-[40px]">
                     Select
                 </Button>
             </CardFooter>
@@ -35,29 +35,21 @@ export function Cards() {
     )
 }
 
-interface FlightInfoProps {
-    name: string;
-    time: string;
-    direction: string;
-    eta: string;
-    secondFlightName?: string;
-    secondFlightStopAmount: string;
-}
 function FlightInfo({name, time, direction, eta, secondFlightName, secondFlightStopAmount}: FlightInfoProps){
     return(
         <div className="flex flex-row items-end justify-between">
             <div className="flex flex-col">
-                <p className="text-gray">{name}</p>
-                <h2 className="font-bold">{time}</h2>
+                <p className="text-gray-secondary text-sm">{name}</p>
+                <h2 className="font-medium text-secondary text-lg">{time}</h2>
             </div>
             <div className="flex flex-row gap-20">
                 <div className="flex flex-col items-start">
-                    <p className="text-gray">{direction}</p>
-                    <h2 className="font-bold">{eta}</h2>
+                    <p className="text-gray-secondary text-sm">{direction}</p>
+                    <h2 className="font-medium text-secondary text-lg">{eta}</h2>
                 </div>
-                <div className="flex flex-col justify-end w-[150px] truncate">
-                    {secondFlightName ? (<p className="text-gray truncate ">{secondFlightName}</p>) : null}
-                    <h2 className="font-bold">{secondFlightStopAmount ? secondFlightStopAmount : 'Non stop'}</h2>
+                <div className="flex flex-col justify-end w-[150px]">
+                    {secondFlightName ? (<p className="text-gray-secondary truncate text-sm">{secondFlightName}</p>) : null}
+                    <h2 className="font-medium text-secondary text-lg">{secondFlightStopAmount ? secondFlightStopAmount : 'Non stop'}</h2>
                 </div>
             </div>
         </div>

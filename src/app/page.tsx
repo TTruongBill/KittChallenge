@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <h1>Good afternoon, Brian</h1>
+      <h1 className="text-[36px] font-semibold">Good afternoon, Brian</h1>
       <Card>
         <CardHeader>
           <CardTitle><Badge variant="secondary" className="bg-gray-bg w-[127px] h-[36px] justify-center">Flights</Badge></CardTitle>

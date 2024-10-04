@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${neue.className} antialiased`}
+        className={`${neue.className} antialiased tracking-wide`}
       >
         {children}
       </body>
