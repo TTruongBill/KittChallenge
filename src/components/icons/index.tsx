@@ -3,6 +3,7 @@ import ChevronDownIcon from "./chevronDownIcon"
 import TargetIcon from "./targetIcon"
 import SearchIcon from "./searchIcon"
 import SwitchIcon from "./switchIcon"
+import XIcon from "./xIcon"
 import { IconProps } from "./types"
 
 export const icons = {
@@ -10,7 +11,8 @@ export const icons = {
     ChevronDownIcon, 
     TargetIcon,
     SearchIcon,
-    SwitchIcon
+    SwitchIcon,
+    XIcon
 }
 
 export function Icons({icon, className}: IconProps) {

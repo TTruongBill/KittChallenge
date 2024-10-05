@@ -23,7 +23,7 @@ export function Cards() {
                     secondFlightStopAmount="Non stop"
                 />
             </CardContent>
-            <Separator orientation="vertical" />
+            <Separator orientation="vertical" className="w-"/>
             <CardFooter className="flex flex-col items-start justify-end">
                 <p className="text-gray-secondary text-sm">from</p>
                 <h2 className="font-medium text-secondary text-xl">AED 2,456.90</h2>
