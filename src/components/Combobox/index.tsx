@@ -89,7 +89,7 @@ const airports = {
   }
   
 
-export function Combobox({label, value, setValue, errorText}: ComboboxProps) {
+export function Combobox({label, value, setValue, errorText, setErrorText}: ComboboxProps) {
   const [open, setOpen] = React.useState(false)
  
   return (
@@ -127,6 +127,9 @@ export function Combobox({label, value, setValue, errorText}: ComboboxProps) {
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? "" : currentValue)
                     setOpen(false)
+                    if(airport.name){
+                      setErrorText('')
+                    }
                   }}
                 >
                   {airport.name}

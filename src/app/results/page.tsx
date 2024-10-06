@@ -1,7 +1,7 @@
 import { Cards } from "@/components/Cards";
 import Header from "@/components/Header";
 
-export function results() {
+export function Results() {
     return(
         <section>
             <Header />
@@ -16,4 +16,4 @@ export function results() {
     )
 }
 
-export default results;
+export default Results;

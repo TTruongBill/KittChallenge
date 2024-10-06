@@ -14,7 +14,7 @@ import {
  
 import { DatePickerProps } from "./type"
 
-export function DatePicker({label, value, setValue, errorText}: DatePickerProps) {
+export function DatePicker({label, value, setValue, errorText, setErrorText}: DatePickerProps) {
  
   return (
     <Popover>
@@ -37,7 +37,12 @@ export function DatePicker({label, value, setValue, errorText}: DatePickerProps)
         <Calendar
           mode="single"
           selected={value}
-          onSelect={setValue}
+          onSelect={(date) => {
+            setValue(date)
+            if(date){
+              setErrorText('')
+            }
+          }}
           initialFocus
         />
       </PopoverContent>

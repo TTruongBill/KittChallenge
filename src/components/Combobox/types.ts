@@ -3,4 +3,5 @@ export interface ComboboxProps {
     value: string;
     setValue: React.Dispatch<React.SetStateAction<string>>;
     errorText?: string;
+    setErrorText: React.Dispatch<React.SetStateAction<string>>;
 }

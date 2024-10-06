@@ -34,8 +34,8 @@ export function FlightSearch() {
         const queryParams = new URLSearchParams({
           from: fromLocation,
           to: toLocation,
-          departureDate: departureDate ? departureDate.toISOString() : "", // Convert Date to string
-          returnDate: returnDate ? returnDate.toISOString() : "",         // Convert Date to string
+          departureDate: departureDate ? departureDate.toLocaleDateString([],{month: 'short', day: 'numeric', year: '2-digit'}) : "", 
+          returnDate: returnDate ? returnDate.toLocaleDateString([],{month: 'short', day: 'numeric', year: '2-digit'}) : "",       
         }).toString();
 
         router.push(`/results?${queryParams}`);
@@ -46,14 +46,14 @@ export function FlightSearch() {
       <>
         <CardContent className="flex flex-row">
         <div className={`flex ${goingTo ? "flex-row" : "flex-row-reverse"} justify-center items-center mr-2`}>
-            <Combobox label="Where from?" value={fromLocation} setValue={setFromLocation} errorText={fromLocationError}/>
+            <Combobox label="Where from?" value={fromLocation} setValue={setFromLocation} errorText={fromLocationError} setErrorText={setFromLocationError}/>
                 <Button variant="ghost" className="rounded-full w-[52px] h-[52px] mx-4 bg-gray-bg" onClick={() => { setGoingTo(!goingTo); }}>
                     <Icons icon="SwitchIcon" />
                 </Button>
-            <Combobox label="Where to?" value={toLocation} setValue={setToLocation} errorText={toLocationError}/>
+            <Combobox label="Where to?" value={toLocation} setValue={setToLocation} errorText={toLocationError} setErrorText={setToLocationError}/>
         </div>
-        <DatePicker label="Departure" value={departureDate} setValue={setDepartureDate} errorText={departureDateError} />
-        <DatePicker label="Return" value={returnDate} setValue={setReturnDate} errorText={returnDateError}/>
+        <DatePicker label="Departure" value={departureDate} setValue={setDepartureDate} errorText={departureDateError} setErrorText={setDepartureDateError}/>
+        <DatePicker label="Return" value={returnDate} setValue={setReturnDate} errorText={returnDateError} setErrorText={setReturnDateError}/>
         </CardContent>
         <CardFooter className="justify-end">
         <Button variant="outline" className="bg-primary text-white w-[249px] h-[48px]" onClick={handleSearch} >
