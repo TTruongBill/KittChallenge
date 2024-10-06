@@ -28,7 +28,7 @@ export function DatePicker({label, value, setValue, errorText, setErrorText}: Da
             )}
           >
             <Icons icon="CalendarIcon" className="mr-2" />
-            {value ? format(value, "PPP") : <span className="font-normal text-gray">{label}</span>}
+            {value ? format(value, "dd/MM/yyyy") : <span className="font-normal text-gray">{label}</span>}
           </Button>
         </PopoverTrigger>
         <p className="text-red-400 absolute ml-4">{errorText}</p>
