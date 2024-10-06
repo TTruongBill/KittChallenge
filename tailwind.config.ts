@@ -19,6 +19,7 @@ const config: Config = {
 			'gray-bg': '#F5F7FA',
 			'gray-secondary': '#787B80',
 			'gray-from': '#F0F0F0',
+			'gray-bg-sheet': '#E6E8EB',
 			text: '#000C0B'
   		},
   		borderRadius: {

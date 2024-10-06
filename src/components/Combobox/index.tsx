@@ -89,12 +89,12 @@ const airports = {
   }
   
 
-export function Combobox({label}: ComboboxProps) {
+export function Combobox({label, value, setValue, errorText}: ComboboxProps) {
   const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
  
   return (
     <Popover open={open} onOpenChange={setOpen}>
+      <div>
       <PopoverTrigger asChild>
         <Button
           variant="outline"
@@ -103,10 +103,7 @@ export function Combobox({label}: ComboboxProps) {
           className="min-w-[270px] h-[60px] justify-between"
         >
           <div className="flex flex-row gap-2 font-normal text-gray">
-            {value 
-              ? null
-              : <Icons icon="TargetIcon" />
-            }
+            <Icons icon="TargetIcon" />
             {value
               ? airports.airports.find((airport) => airport.name === value)?.name
               : label}
@@ -114,6 +111,9 @@ export function Combobox({label}: ComboboxProps) {
           <Icons icon="ChevronDownIcon" />
         </Button>
       </PopoverTrigger>
+      <p className="text-red-400 absolute">{errorText}</p>
+      </div>
+      
       <PopoverContent className="w-[270px] p-0">
         <Command>
           <CommandInput placeholder="Search Airports..." className="h-9" />
