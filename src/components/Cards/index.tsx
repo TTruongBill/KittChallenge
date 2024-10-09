@@ -5,7 +5,7 @@ import { FlightInfoProps } from "./types";
 
 export function Cards() {
     return(
-        <Card className="flex flex-row w-[1056px] h-[186px] justify-between shadow-none">
+        <Card className="flex flex-row w-[1056px] h-[186px] justify-between shadow-none cursor-pointer bg-white hover:bg-gray-bg">
             <CardContent className="flex flex-col w-full pt-6 gap-10">
                 <FlightInfo 
                     name="New Delhi • AT 4334" 
@@ -14,7 +14,7 @@ export function Cards() {
                     eta="2h 10min"
                     secondFlightStopAmount="Non stop"
                 />
-                  <FlightInfo 
+                <FlightInfo 
                     name="New Delhi • AT 4334" 
                     time="9:45 AM - 11:45 AM"
                     direction="BOM - DEL"

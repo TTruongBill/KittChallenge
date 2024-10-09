@@ -1,4 +1,5 @@
 "use client"
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button"
 import { Combobox } from "@/components/Combobox";
@@ -18,7 +19,7 @@ import {
 import { SheetSideProps } from "./type"
 import { useRouter } from 'next/navigation';
 
-export function SheetSide({children, fromLocation, toLocation, departureDate, returnDate, setFromLocation, setToLocation, setDepartureDate, setReturnDate}: SheetSideProps) {
+export function SheetSideHeader({children, fromLocation, toLocation, departureDate, returnDate, setFromLocation, setToLocation, setDepartureDate, setReturnDate}: SheetSideProps) {
     const router = useRouter();
 
     const [goingTo, setGoingTo] = useState(true)
@@ -85,3 +86,5 @@ export function SheetSide({children, fromLocation, toLocation, departureDate, re
     </Sheet>
   )
 }
+
+export default SheetSideHeader;

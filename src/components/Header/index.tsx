@@ -9,7 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import { Icons } from "@/components/icons";
 import { Button } from "../ui/button";
 import { useState, useEffect } from 'react'
-import { SheetSide } from "@/components/SheetSide";
+import { SheetSideHeader } from "@/components/SheetSideHeader"
 import Link from "next/link";
 
 export function Header() {
@@ -34,7 +34,7 @@ export function Header() {
         <>
             <header className="flex justify-center">
                 <div className="py-8 flex justify-between items-center w-[1056px]">
-                    <SheetSide 
+                    <SheetSideHeader 
                     fromLocation={fromLocation} 
                     toLocation={toLocation}
                     departureDate={departureDate}
@@ -58,7 +58,7 @@ export function Header() {
                                 </CardContent>
                             </Card>
                         </Button>
-                    </SheetSide>
+                    </SheetSideHeader>
                     <Button variant="outline" className="rounded-full w-[44px] h-[44px]" asChild>
                         <Link href="/">
                             <Icons icon="XIcon" />

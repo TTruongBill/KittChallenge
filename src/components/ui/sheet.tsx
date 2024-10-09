@@ -2,10 +2,11 @@
 
 import * as React from "react"
 import * as SheetPrimitive from "@radix-ui/react-dialog"
-import { Cross2Icon } from "@radix-ui/react-icons"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
+import { Icons } from "@/components/icons"
+import { Button } from "@/components/ui/button"
 
 const Sheet = SheetPrimitive.Root
 
@@ -36,8 +37,7 @@ const sheetVariants = cva(
     variants: {
       side: {
         top: "inset-x-0 top-0 data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
-       right:
-          "inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
+        right: "top-0 sm:rounded-xl right-0 h-full sm:h-[95%] sm:m-6 w-full border-2 border-neutral-200 data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm md:max-w-xl lg:max-w-2xl",
       },
     },
     defaultVariants: {
@@ -61,10 +61,14 @@ const SheetContent = React.forwardRef<
       className={cn(sheetVariants({ side }), className)}
       {...props}
     >
-      <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-neutral-100 dark:ring-offset-neutral-950 dark:focus:ring-neutral-300 dark:data-[state=open]:bg-neutral-800">
-        <Cross2Icon className="h-4 w-4" />
-        <span className="sr-only">Close</span>
-      </SheetPrimitive.Close>
+      {side == "right" && (
+        <Button asChild variant="ghost" className="rounded-full w-4 h-4 mx-4 bg-gray-bg">
+          <SheetPrimitive.Close className="absolute right-4 left-4 rounded-full w-8 h-8 hover:bg-gray-bg ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-neutral-100 dark:ring-offset-neutral-950 dark:focus:ring-neutral-300 dark:data-[state=open]:bg-neutral-800">
+              <Icons icon="ArrowIcon" />
+              <span className="sr-only">Close</span>
+          </SheetPrimitive.Close>
+        </Button>
+      )}
       {children}
     </SheetPrimitive.Content>
   </SheetPortal>
