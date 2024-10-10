@@ -2,7 +2,7 @@ import { SheetSideCard } from "@/components/SheetSideCard";
 import Header from "@/components/Header";
 import Cards from "@/components/Cards";
 
-export function Results() {
+export default function Results() {
     return(
         <section >
             <Header />
@@ -26,5 +26,3 @@ export function Results() {
         </section>
     )
 }
-
-export default Results;

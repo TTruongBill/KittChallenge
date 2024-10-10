@@ -3,7 +3,7 @@ import Header from "@/components/Header"
 import { CardContent } from "@/components/ui/card"
 import { Icons } from "@/components/icons"
 
-export function Loading() {
+export default function Loading() {
     return(
         <div className="w-full flex flex-col justify-center items-center mt-10 gap-4"> 
         <Header />
@@ -22,5 +22,3 @@ export function Loading() {
     </div>
     )
 }
-
-export default Loading;
