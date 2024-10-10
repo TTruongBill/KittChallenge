@@ -13,6 +13,8 @@ import { SheetSideHeader } from "@/components/SheetSideHeader"
 import Link from "next/link";
 
 export function Header() {
+    const [fromLocationCode, setFromLocationCode] = useState('');
+    const [toLocationCode, setToLocationCode] = useState('');
     const [fromLocation, setFromLocation] = useState('');
     const [toLocation, setToLocation] = useState('');
     const [departureDate, setDepartureDate] = useState<Date>();
@@ -21,6 +23,8 @@ export function Header() {
     useEffect(() => {
       if (typeof window !== 'undefined') {
         const queryParams = new URLSearchParams(window.location.search);
+        setFromLocationCode(queryParams.get('fromCode') || '');
+        setToLocationCode(queryParams.get('toCode') || '');
         setFromLocation(queryParams.get('from') || '');
         setToLocation(queryParams.get('to') || '');
         setDepartureDate(new Date(queryParams.get('departureDate')!) || '');
@@ -39,16 +43,20 @@ export function Header() {
                     toLocation={toLocation}
                     departureDate={departureDate}
                     returnDate={returnDate}
+                    fromLocationCode={fromLocationCode}
+                    toLocationCode={toLocationCode}
                     setFromLocation={setFromLocation}
                     setToLocation={setToLocation}
                     setDepartureDate={setDepartureDate}
-                    setReturnDate={setReturnDate}>
-                        <Button className="px-0 rounded-full w-full lg:mr-20 mt-16 lg:mt-0" onClick={() => {setModifyFlight(!modifyFlight)}}>
+                    setReturnDate={setReturnDate}
+                    setFromLocationCode={setFromLocationCode}
+                    setToLocationCode={setToLocationCode}>
+                        <Button className="px-0 rounded-full w-full max-w-[680px] mt-16 md:mt-0" onClick={() => {setModifyFlight(!modifyFlight)}}>
                             <Card className="rounded-full text-base shadow-none hover:bg-gray-bg transition-all w-full ">
                                 <CardContent className="flex flex-row justify-center items-center p-4 space-x-4 h-[56px] w-full text-gray-secondary font-medium">
-                                    <p className="truncate"><span className="font-medium text-secondary pr-2">CDG</span>{fromLocation}</p>
+                                    <p className="truncate"><span className="font-medium text-secondary pr-2">{fromLocationCode}</span>{fromLocation}</p>
                                     <Separator orientation="vertical" />
-                                    <p className="truncate"><span className="font-medium text-secondary pr-2">CDG</span>{toLocation}</p>
+                                    <p className="truncate"><span className="font-medium text-secondary pr-2">{toLocationCode}</span>{toLocation}</p>
                                     <Separator orientation="vertical" />
                                     <p className="font-medium text-secondary">{departureDate?.toLocaleDateString([],{month: 'short', day: 'numeric'}) + " - " + returnDate?.toLocaleDateString([],{month: 'short', day: 'numeric'})}</p>
                                     <Separator orientation="vertical" />
@@ -59,7 +67,7 @@ export function Header() {
                             </Card>
                         </Button>
                     </SheetSideHeader>
-                    <Button variant="outline" className="absolute top-4 right-4 lg:top-0 lg:right-0 lg:relative rounded-full w-[44px] h-[44px]" asChild>
+                    <Button variant="outline" className="absolute top-4 right-4 md:top-0 md:right-0 md:relative rounded-full w-[44px] h-[44px]" asChild>
                         <Link href="/">
                             <Icons icon="XIcon"/>
                         </Link>

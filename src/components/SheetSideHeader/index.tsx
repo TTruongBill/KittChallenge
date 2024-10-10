@@ -19,7 +19,7 @@ import {
 import { SheetSideProps } from "./types"
 import { useRouter } from 'next/navigation';
 
-export function SheetSideHeader({children, fromLocation, toLocation, departureDate, returnDate, setFromLocation, setToLocation, setDepartureDate, setReturnDate}: SheetSideProps) {
+export function SheetSideHeader({children, fromLocation, toLocation, fromLocationCode, toLocationCode, departureDate, returnDate, setFromLocation, setToLocation, setDepartureDate, setReturnDate, setFromLocationCode, setToLocationCode}: SheetSideProps) {
     const router = useRouter();
 
     const [goingTo, setGoingTo] = useState(true)
@@ -40,6 +40,8 @@ export function SheetSideHeader({children, fromLocation, toLocation, departureDa
         const queryParams = new URLSearchParams({
           from: fromLocation,
           to: toLocation,
+          fromCode: fromLocationCode,
+          toCode: toLocationCode,
           departureDate: departureDate ? departureDate.toLocaleDateString([],{month: 'short', day: 'numeric', year: '2-digit'}) : "", 
           returnDate: returnDate ? returnDate.toLocaleDateString([],{month: 'short', day: 'numeric', year: '2-digit'}) : "",       
         }).toString();
@@ -56,11 +58,11 @@ export function SheetSideHeader({children, fromLocation, toLocation, departureDa
         <SheetContent side={"top"}>
             <CardContent className="flex flex-row justify-center">
                 <div className={`flex ${goingTo ? "flex-row" : "flex-row-reverse"} justify-center items-center mr-2`}>
-                    <Combobox label="Where from?" value={fromLocation} setValue={setFromLocation} errorText={fromLocationError} setErrorText={setFromLocationError}/>
+                    <Combobox label="Where from?" value={fromLocation} setValue={setFromLocation} errorText={fromLocationError} setErrorText={setFromLocationError} locationCode={fromLocationCode} setLocationCode={setFromLocationCode}/>
                         <Button variant="ghost" className="rounded-full w-[52px] h-[52px] mx-4 bg-gray-bg" onClick={() => { setGoingTo(!goingTo); }}>
                             <Icons icon="SwitchIcon" />
                         </Button>
-                    <Combobox label="Where to?" value={toLocation} setValue={setToLocation} errorText={toLocationError} setErrorText={setToLocationError}/>
+                    <Combobox label="Where to?" value={toLocation} setValue={setToLocation} errorText={toLocationError} setErrorText={setToLocationError} locationCode={toLocationCode} setLocationCode={setToLocationCode}/>
                 </div>
                 <DatePicker label="Departure" value={departureDate} setValue={setDepartureDate} errorText={departureDateError} setErrorText={setDepartureDateError}/>
                 <DatePicker label="Return" value={returnDate} setValue={setReturnDate} errorText={returnDateError} setErrorText={setReturnDateError}/>
