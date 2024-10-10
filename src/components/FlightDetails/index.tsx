@@ -1,7 +1,8 @@
 import { Icons } from "@/components/icons";
 import { FlightDetailsProps } from "./types"
+import Image from "next/image";
 
-export function FlightDetails({date, arrivalTime, airportCode, airport, img, airline, airlineCode, classType, classTypeCode, time, dotted, border = "none"}: FlightDetailsProps) {
+export function FlightDetails({date, arrivalTime, airportCode, airport, img, airline, airlineCode, classType, classTypeCode, time, border = "none"}: FlightDetailsProps) {
    
    const borderType = () => {if(border == "solid"){
         return "border-solid"
@@ -29,8 +30,12 @@ export function FlightDetails({date, arrivalTime, airportCode, airport, img, air
                     )}
                 </div>
                 {border == "solid" && (
-                    <div className="flex flex-row pt-6">
-                        <img></img>
+                    <div className="flex flex-row pt-6 gap-4">
+                        {img && (
+                            <div className="h-[28px] w-[28px] border rounded-lg border-gray-from"> 
+                                <Image src={img ?? ''} alt="" fill={true} objectFit='contain' className="!relative"/>
+                            </div>
+                        )}
                         <div className="flex flex-col text-gray text-xs">
                             <p>{airline}<span className="font-sans"> • </span>{airlineCode}</p>
                             <p>{classType}<span className="font-sans"> • </span>{classTypeCode}</p>

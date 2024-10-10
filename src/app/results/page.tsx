@@ -6,8 +6,10 @@ export function Results() {
     return(
         <section>
             <Header />
-            <div className="w-full flex flex-col justify-center items-center mt-10 gap-4">
-                <p className="">Showing 4 of 100 results</p>
+            <div className="flex flex-col justify-center items-center mt-10 gap-4 mx-2 lg:mx-8">
+                <div className="w-full max-w-[1056px]">
+                    <p className="">Showing 4 of 100 results</p>
+                </div>
                 <SheetSideCard>
                     <Cards />
                 </SheetSideCard>

@@ -9,7 +9,7 @@ import FlightSearch from "@/components/FlightSearch"
 export default function Home() {
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center border-dashed border-x-2 mx-4" >
       <h1 className="text-[36px] font-semibold">Good afternoon, Brian</h1>
       <Card>
         <CardHeader>
