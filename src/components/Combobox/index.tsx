@@ -108,9 +108,7 @@ export function Combobox({label, value, setValue, errorText, setErrorText, locat
             )}
             <div className="flex flex-row gap-1 font-normal text-gray w-5/6">
                 <Icons icon="TargetIcon" />
-                <h2 className="font-medium"> {value
-                  ? airports.airports.find((airport) => airport.name=== value)?.code
-                  : ''}</h2>
+                <h2 className="font-medium"> {locationCode}</h2>
                 <p className="truncate text-gray-secondary font-medium">
                 {value
                   ? airports.airports.find((airport) => airport.name === value)?.name
