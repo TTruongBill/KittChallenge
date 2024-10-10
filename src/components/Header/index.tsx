@@ -32,8 +32,8 @@ export function Header() {
 
     return(
         <>
-            <header className="flex justify-center">
-                <div className="py-8 flex justify-between items-center w-[1056px]">
+            <header className="flex flex-row justify-center mx-2 lg:mx-8">
+                <div className="py-8 flex justify-between items-center w-full max-w-[1056px]">
                     <SheetSideHeader 
                     fromLocation={fromLocation} 
                     toLocation={toLocation}
@@ -43,25 +43,25 @@ export function Header() {
                     setToLocation={setToLocation}
                     setDepartureDate={setDepartureDate}
                     setReturnDate={setReturnDate}>
-                        <Button className="px-0 rounded-full" onClick={() => {setModifyFlight(!modifyFlight)}}>
-                            <Card className="w-fit rounded-full text-base shadow-none hover:bg-gray-bg transition-all">
-                                <CardContent className="flex flex-row justify-center items-center p-4 space-x-4 h-[56px] text-gray-secondary font-medium">
-                                    <p><span className="font-medium text-secondary pr-2">CDG</span>{fromLocation}</p>
+                        <Button className="px-0 rounded-full w-full lg:mr-20 mt-16 lg:mt-0" onClick={() => {setModifyFlight(!modifyFlight)}}>
+                            <Card className="rounded-full text-base shadow-none hover:bg-gray-bg transition-all w-full ">
+                                <CardContent className="flex flex-row justify-center items-center p-4 space-x-4 h-[56px] w-full text-gray-secondary font-medium">
+                                    <p className="truncate"><span className="font-medium text-secondary pr-2">CDG</span>{fromLocation}</p>
                                     <Separator orientation="vertical" />
-                                    <p><span className="font-medium text-secondary pr-2">CDG</span>{toLocation}</p>
+                                    <p className="truncate"><span className="font-medium text-secondary pr-2">CDG</span>{toLocation}</p>
                                     <Separator orientation="vertical" />
                                     <p className="font-medium text-secondary">{departureDate?.toLocaleDateString([],{month: 'short', day: 'numeric'}) + " - " + returnDate?.toLocaleDateString([],{month: 'short', day: 'numeric'})}</p>
                                     <Separator orientation="vertical" />
-                                    <div className="rounded-full bg-light-green w-[34px] h-[34px] flex justify-center items-center">
+                                    <div className="rounded-full bg-light-green w-[34px] h-[34px] flex justify-center items-center aspect-square">
                                         <Icons icon="SearchIcon" className="text-secondary"/>
                                     </div>
                                 </CardContent>
                             </Card>
                         </Button>
                     </SheetSideHeader>
-                    <Button variant="outline" className="rounded-full w-[44px] h-[44px]" asChild>
+                    <Button variant="outline" className="absolute top-4 right-4 lg:top-0 lg:right-0 lg:relative rounded-full w-[44px] h-[44px]" asChild>
                         <Link href="/">
-                            <Icons icon="XIcon" />
+                            <Icons icon="XIcon"/>
                         </Link>
                     </Button>
                 </div>

@@ -100,13 +100,23 @@ export function Combobox({label, value, setValue, errorText, setErrorText}: Comb
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="min-w-[270px] h-[60px] justify-between"
+          className="h-[60px] justify-between w-[270px]"
         >
-          <div className="flex flex-row gap-2 font-normal text-gray">
-            <Icons icon="TargetIcon" />
-            {value
-              ? airports.airports.find((airport) => airport.name === value)?.name
-              : label}
+          <div className="flex flex-col justify-start items-start w-full">
+            {value && (
+              <label className="text-gray-secondary font-normal w-full text-start pl-6 text-xs ">{label}</label>
+            )}
+            <div className="flex flex-row gap-1 font-normal text-gray w-5/6">
+                <Icons icon="TargetIcon" />
+                <h2 className="font-medium"> {value
+                  ? airports.airports.find((airport) => airport.name=== value)?.code
+                  : ''}</h2>
+                <p className="truncate text-gray-secondary font-medium">
+                {value
+                  ? airports.airports.find((airport) => airport.name === value)?.name
+                  : label}
+                </p>
+            </div>
           </div>
           <Icons icon="ChevronDownIcon" />
         </Button>

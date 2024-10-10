@@ -23,12 +23,21 @@ export function DatePicker({label, value, setValue, errorText, setErrorText}: Da
           <Button
             variant={"outline"}
             className={cn(
-              "w-[180px] h-[60px] justify-start text-left items-center font-normal ml-4",
+              "w-full max-w-[270px] md:w-[180px] h-[60px] justify-start text-left items-center font-normal my-4 mb-0 md:ml-4 md:my-0 ",
               !value && "text-muted-foreground"
             )}
           >
-            <Icons icon="CalendarIcon" className="mr-2" />
-            {value ? format(value, "dd/MM/yyyy") : <span className="font-normal text-gray">{label}</span>}
+            <div className="flex flex-col">
+              <div>
+                {value && (
+                  <label className="text-gray-secondary font-normal w-full text-xs text-start pl-7">{label}</label>
+                )}
+              </div>
+              <div className="flex flex-row">
+                <Icons icon="CalendarIcon" className="mr-2" />
+                {value ? format(value, "dd/MM/yyyy") : <span className="font-normal text-gray">{label}</span>}
+              </div>
+            </div>
           </Button>
         </PopoverTrigger>
         <p className="text-red-400 absolute ml-4">{errorText}</p>
