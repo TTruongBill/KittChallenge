@@ -26,9 +26,9 @@ export function SheetSideCard({children}: SheetSideProps) {
                 <h1 className="font-medium mt-2 mb-6 text-xl">Flight details</h1>
                 <Separator />
                 <div className="mt-6">
-                    <FlightDetails date="Sat 28 Sept" arrivalTime="2:15" airportCode="DXB" airport="Dubai International Airport" airline="Saudi Arabian Airlines" airlineCode="SV553" classType="Economy" classTypeCode="A330" time="3h 45m" border="solid"/>
+                    <FlightDetails date="Sat 28 Sept" arrivalTime="2:15" airportCode="DXB" airport="Dubai International Airport" airline="Saudi Arabian Airlines" airlineCode="SV553" classType="Economy" classTypeCode="A330" time="3h 45m" border="solid" img="/img/lufthansaLogo.png"/>
                     <FlightDetails date="Sat 28 Sept" arrivalTime="2:15" airportCode="RUH" airport="King Khalid International Airport" time="2h 25m" border="dotted"/>
-                    <FlightDetails date="Sat 28 Sept" arrivalTime="2:15" airportCode="RUH" airport="King Khalid International Airport" airline="Saudi Arabian Airlines" airlineCode="SV553" classType="Economy" classTypeCode="A330" time="3h 45m" border="solid"/>
+                    <FlightDetails date="Sat 28 Sept" arrivalTime="2:15" airportCode="RUH" airport="King Khalid International Airport" airline="Saudi Arabian Airlines" airlineCode="SV553" classType="Economy" classTypeCode="A330" time="3h 45m" border="solid" img="/img/lufthansaLogo.png"/>
                     <FlightDetails date="Sat 28 Sept" arrivalTime="2:15" airportCode="CDG" airport="Paris - Charles de Gualle Airport" time="2h 25m" border="none"/>
                 </div>
             </CardContent>

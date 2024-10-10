@@ -115,7 +115,7 @@ export function FlightSearch() {
     return(
       <>
         <CardContent className="flex flex-col md:flex-row ">
-          <div className={`flex ${goingTo ? "flex-col md:flex-row" : "flex-col md:flex-row-reverse"} justify-center items-center mr-2`}>
+          <div className={`flex ${goingTo ? "flex-col md:flex-row" : "flex-col-reverse md:flex-row-reverse"} justify-center items-center mr-2`}>
               <Combobox label="Where from?" locationCode={fromLocationCode} setLocationCode={setFromLocationCode} value={fromLocation} setValue={setFromLocation} errorText={fromLocationError} setErrorText={setFromLocationError}/>
                   <Button variant="ghost" className="rounded-full w-[52px] h-[52px] mx-4 my-4 md:my-0 bg-gray-bg" onClick={() => { setGoingTo(!goingTo); }}>
                       <Icons icon="SwitchIcon" />

@@ -56,10 +56,10 @@ export function SheetSideHeader({children, fromLocation, toLocation, fromLocatio
         {children}
         </SheetTrigger>
         <SheetContent side={"top"}>
-            <CardContent className="flex flex-row justify-center">
-                <div className={`flex ${goingTo ? "flex-row" : "flex-row-reverse"} justify-center items-center mr-2`}>
+            <CardContent className="flex flex-col lg:flex-row justify-center items-center w-full">
+                <div className={`flex ${goingTo ? "flex-col lg:flex-row" : "flex-col-reverse lg:flex-row-reverse"} justify-center items-center mr-2`}>
                     <Combobox label="Where from?" value={fromLocation} setValue={setFromLocation} errorText={fromLocationError} setErrorText={setFromLocationError} locationCode={fromLocationCode} setLocationCode={setFromLocationCode}/>
-                        <Button variant="ghost" className="rounded-full w-[52px] h-[52px] mx-4 bg-gray-bg" onClick={() => { setGoingTo(!goingTo); }}>
+                        <Button variant="ghost" className="rounded-full w-[52px] h-[52px] mx-4 my-4 lg:my-0 bg-gray-bg" onClick={() => { setGoingTo(!goingTo); }}>
                             <Icons icon="SwitchIcon" />
                         </Button>
                     <Combobox label="Where to?" value={toLocation} setValue={setToLocation} errorText={toLocationError} setErrorText={setToLocationError} locationCode={toLocationCode} setLocationCode={setToLocationCode}/>

@@ -7,6 +7,7 @@ import XIcon from "./xIcon"
 import ArrowIcon from "./arrowIcon"
 import CircleIcon from "./circleIcon"
 import ClockIcon from './clockIcon'
+import AirplaneIcon from "./airplaneIcon"
 import { IconProps } from "./types"
 
 export const icons = {
@@ -19,6 +20,7 @@ export const icons = {
     ArrowIcon,
     CircleIcon,
     ClockIcon,
+    AirplaneIcon
 }
 
 export function Icons({icon, className}: IconProps) {

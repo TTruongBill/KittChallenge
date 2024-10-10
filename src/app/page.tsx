@@ -9,8 +9,8 @@ import FlightSearch from "@/components/FlightSearch"
 export default function Home() {
 
   return (
-    <div className="flex flex-col justify-center items-center border-dashed border-x-2 mx-4" >
-      <h1 className="text-[36px] font-semibold">Good afternoon, Brian</h1>
+    <div className="flex flex-col justify-center items-center mx-4 pt-20" >
+      <h1 className="text-[36px] font-semibold my-8">Good afternoon, Brian</h1>
       <Card>
         <CardHeader>
           <CardTitle><Badge variant="secondary" className="bg-gray-bg w-[127px] h-[36px] justify-center">Flights</Badge></CardTitle>
