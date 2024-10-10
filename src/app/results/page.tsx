@@ -11,6 +11,15 @@ export function Results() {
                 <SheetSideCard>
                     <Cards />
                 </SheetSideCard>
+                <SheetSideCard>
+                    <Cards />
+                </SheetSideCard>
+                <SheetSideCard>
+                    <Cards />
+                </SheetSideCard>
+                <SheetSideCard>
+                    <Cards />
+                </SheetSideCard>
             </div>
         </section>
     )

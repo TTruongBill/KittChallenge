@@ -16,7 +16,7 @@ import {
   SheetFooter,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { SheetSideProps } from "./type"
+import { SheetSideProps } from "./types"
 import { useRouter } from 'next/navigation';
 
 export function SheetSideHeader({children, fromLocation, toLocation, departureDate, returnDate, setFromLocation, setToLocation, setDepartureDate, setReturnDate}: SheetSideProps) {

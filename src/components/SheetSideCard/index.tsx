@@ -14,7 +14,7 @@ import { SheetSideProps } from "./types"
 import { Separator } from "@/components/ui/separator";
 import FlightDetails from "@/components/FlightDetails";
 
-export function SheetSideCard({children, fromLocation, toLocation, departureDate, returnDate, setFromLocation, setToLocation, setDepartureDate, setReturnDate}: SheetSideProps) {
+export function SheetSideCard({children}: SheetSideProps) {
 
   return (
     <Sheet>
