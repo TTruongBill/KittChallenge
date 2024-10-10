@@ -5,6 +5,8 @@ import SearchIcon from "./searchIcon"
 import SwitchIcon from "./switchIcon"
 import XIcon from "./xIcon"
 import ArrowIcon from "./arrowIcon"
+import CircleIcon from "./circleIcon"
+import ClockIcon from './clockIcon'
 import { IconProps } from "./types"
 
 export const icons = {
@@ -14,7 +16,9 @@ export const icons = {
     SearchIcon,
     SwitchIcon,
     XIcon,
-    ArrowIcon
+    ArrowIcon,
+    CircleIcon,
+    ClockIcon,
 }
 
 export function Icons({icon, className}: IconProps) {
